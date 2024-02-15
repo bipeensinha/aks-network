@@ -1,0 +1,17 @@
+# This deploys Nginx with a LoadBalancer service, automatically provisioning an external load balancer for external access.
+# kubectl apply -f nginx-loadbalancer.yaml
+
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-loadbalancer
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

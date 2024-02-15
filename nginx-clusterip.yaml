@@ -1,0 +1,14 @@
+# This deploys Nginx with a ClusterIP service, making it accessible only within the Kubernetes cluster
+# # kubectl apply -f nginx-clusterip.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-clusterip
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

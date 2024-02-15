@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Frontend</title>
+</head>
+<body>
+    <h1>Submit Data</h1>
+    <form id="data-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("data-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            fetch("http://backend-service:3000/submit-data", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Data submitted:", data);
+                alert("Data submitted successfully!");
+            })
+            .catch(error => {
+                console.error("Error submitting data:", error);
+                alert("Failed to submit data!");
+            });
+        });
+    </script>
+</body>
+</html>
