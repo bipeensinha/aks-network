@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: bipeen2001/devops:be # backend-image
+        image: bipeen2001/devops:bev1 # backend-image
         ports:
         - containerPort: 3000
 ---
