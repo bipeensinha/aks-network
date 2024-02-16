@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: bipeen2001/devops:fe # frontend-image
+        image: bipeen2001/devops:fev1 # frontend-image
         ports:
         - containerPort: 80
 ---
