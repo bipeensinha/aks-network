@@ -1,4 +1,4 @@
-/ # 0-kubectl apply -f frontend-deployment.yaml
+ # 0-kubectl apply -f frontend-deployment.yaml
 # kubectl apply -f backend-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
